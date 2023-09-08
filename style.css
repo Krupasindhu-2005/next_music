@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'rubik' , sans-serif;
+}
+body{
+    background: #000;
+    height: 100vh;
+}
+#container{
+    width: 400px;
+    height: 600px;
+    background: linear-gradient(180deg, rgba(102, 130, 255, 0.404) , rgb(159, 80, 255));
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.logo img{
+    width: 50px;
+}
