@@ -29,8 +29,9 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(rgba(84, 121, 171, 0.5), rgba(108, 154, 181, 0.561)), url('/img/bg-1.jpg');
+    background: linear-gradient(191deg, rgba(221, 70, 255, 0.5), rgba(104, 200, 255, 0.73)), url('https://res.cloudinary.com/bloomsbury-publishing-public/image/upload/f_auto,q_auto/BPM/Static/Music%20and%20Sound/equalizer-153212_12801.png');
     background-size: cover;
+    background-position: center;
 }
 .logo{
     width: 40px;
@@ -117,8 +118,104 @@ nav .menu-btn{
 /* ============================================== home page css starts here ============================================== */
 
 .audio_container{
-    border: 1px solid red;
     height:535px;
+    padding: 10px;
+}
+.audio_container .part-1{
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search label {
+    width: 80%;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+}
+.search label input{
+    width: 100%;
+    height: 100%;
+    background: rgb(218, 242, 255);
+    outline: none;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.search label input::placeholder{
+    font-weight: 300;
+    font-size: 12px;
+}
+.search label button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 35px;
+    height: 100%;
+    border: none;
+    background: rgb(65, 65, 255);
+    color: #ffffff;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.clear-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background: rgb(65, 65, 255);
+    color: #ffffff;
+}
+.current-playsong{
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.audio_container .part-2{
+    height: 80%;
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.audio_container .part-2::-webkit-scrollbar{
+    display: none;
+}
+.audio_container .part-2 .card{
+    display: grid;
+    place-items: center;
+    margin-bottom: 10px;
+    padding: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.561)), url('https://www.basicthinking.de/blog/wp-content/uploads/2023/01/music-lm-google-ki.jpg');
+    background-size: cover;
+    border-radius: 10px;
+}
+.audio_container .part-2 .card:last-child{
+    margin-bottom: 0;
+}
+.audio_container .part-2 .card p{
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.audio_container .part-2 .card audio{
+    height: 40px;
+}
+.audio_container .part-2 .card audio::-webkit-media-controls-panel{
+    background:linear-gradient(180deg, rgba(139, 50, 255, 0.6), rgba(35, 35, 255, 0.707));
 }
 
 
@@ -184,4 +281,29 @@ nav .menu-btn{
     font-size: 16px;
     font-weight: bold;
     color: #ffffff;
+}
+
+
+
+/* ================================= media css starts here ================================= */
+@media only screen and (max-width:400px){
+    #container{
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(180deg, rgba(102, 130, 255, 0.404) , rgb(159, 80, 255));
+        border-radius: 5px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+    }
+
+    nav{
+        height:8%;
+    }
+
+    .audio_container{
+        height:92%;
+    }
 }
