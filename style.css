@@ -9,8 +9,8 @@ body{
     height: 100vh;
 }
 #container{
-    width: 400px;
-    height: 600px;
+    width: 100%;
+    height: 100vh;
     background: linear-gradient(180deg, rgba(102, 130, 255, 0.404) , rgb(159, 80, 255));
     border-radius: 5px;
     position: relative;
@@ -24,7 +24,7 @@ body{
 
 nav{
     width: 100%;
-    height: 65px;
+    height: 10%;
     padding: 0 10px;
     display: flex;
     align-items: center;
@@ -118,7 +118,7 @@ nav .menu-btn{
 /* ============================================== home page css starts here ============================================== */
 
 .audio_container{
-    height:535px;
+    height:90%;
     padding: 10px;
 }
 .audio_container .part-1{
@@ -184,10 +184,15 @@ nav .menu-btn{
 }
 
 .audio_container .part-2{
+    width: 100%;
     height: 80%;
     overflow: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    border: 1px solid red;
 }
 .audio_container .part-2::-webkit-scrollbar{
     display: none;
@@ -195,14 +200,10 @@ nav .menu-btn{
 .audio_container .part-2 .card{
     display: grid;
     place-items: center;
-    margin-bottom: 10px;
     padding: 20px;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.561)), url('https://www.basicthinking.de/blog/wp-content/uploads/2023/01/music-lm-google-ki.jpg');
     background-size: cover;
     border-radius: 10px;
-}
-.audio_container .part-2 .card:last-child{
-    margin-bottom: 0;
 }
 .audio_container .part-2 .card p{
     text-align: center;
@@ -212,6 +213,7 @@ nav .menu-btn{
     margin-bottom: 10px;
 }
 .audio_container .part-2 .card audio{
+    width: 100%;
     height: 40px;
 }
 .audio_container .part-2 .card audio::-webkit-media-controls-panel{
@@ -286,19 +288,27 @@ nav .menu-btn{
 
 
 /* ================================= media css starts here ================================= */
-@media only screen and (max-width:400px){
+@media only screen and (min-width:1600px){
     #container{
-        width: 100%;
-        height: 100vh;
-        background: linear-gradient(180deg, rgba(102, 130, 255, 0.404) , rgb(159, 80, 255));
-        border-radius: 5px;
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        overflow: hidden;
+        width: 1600px;
     }
-
+}
+@media only screen and (max-width:1000px){
+    .audio_container .part-2{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (max-width:600px){
+    .audio_container .part-2{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width:400px){
+    .audio_container .part-2{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/* @media only screen and (max-width:400px){
     nav{
         height:8%;
     }
@@ -306,4 +316,4 @@ nav .menu-btn{
     .audio_container{
         height:92%;
     }
-}
+} */
