@@ -114,7 +114,7 @@ nav .menu li a img {
 .search label input {
     width: 100%;
     height: 100%;
-    background: rgb(255, 255, 255);
+    background: #ffffff;
     outline: none;
     border: none;
     padding: 0 20px;
@@ -137,7 +137,7 @@ nav .menu li a img {
     width: 70px;
     height: 100%;
     border: none;
-    background: rgb(255, 255, 255);
+    background: #ffffff;
     color: #000000;
     border-radius: 5px;
     font-size: 16px;
@@ -148,7 +148,7 @@ nav .menu li a img {
     height: 50px;
     border-radius: 5px;
     border: none;
-    background: rgb(255, 255, 255);
+    background: #ffffff;
     color: #000000;
     font-size: 16px;
 }
@@ -173,7 +173,6 @@ nav .menu li a img {
 .audio_container .part-2::-webkit-scrollbar {
     display: none;
 }
-
 .audio_container .part-2 .card {
     display: flex;
     align-items: center;
@@ -181,16 +180,25 @@ nav .menu li a img {
     justify-content: center;
     padding: 20px;
     background-color: #b3b3b3;
-    border-radius: 10px;
+    border: 3px solid #b3b3b3;
+    border-radius: 5px;
     height: 200px;
+    transition: all .2s;
 }
-
+.audio_container .part-2 .card:hover{
+    background-color: #000000;
+    box-shadow: 0 0 6px #fff;
+}
 .audio_container .part-2 .card p {
     text-align: center;
     color: #000000;
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 10px;
+    transition: all .2s;
+}
+.audio_container .part-2 .card:hover p{
+    color: #ffffff;
 }
 
 .audio_container .part-2 .card audio {
@@ -299,13 +307,3 @@ nav .menu li a img {
         grid-template-columns: repeat(1, 1fr);
     }
 }
-
-/* @media only screen and (max-width:400px){
-    nav{
-        height:8%;
-    }
-
-    .audio_container{
-        height:92%;
-    }
-} */
