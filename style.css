@@ -6,7 +6,11 @@
     box-sizing: border-box;
     font-family: 'rubik', sans-serif;
 }
-
+:root{
+    --gray-clr:#b3b3b3;
+    --black-clr:#000000;
+    --white-clr:#ffffff;
+}
 body {
     height: 100vh;
 }
@@ -14,7 +18,7 @@ body {
 #container {
     width: 100%;
     height: 100vh;
-    background: #000000;
+    background: var(--black-clr);
     position: relative;
     overflow: hidden;
 }
@@ -28,8 +32,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #000000;
-    box-shadow: 0 0 6px #fff;
+    background: var(--black-clr);
+    box-shadow: 0 0 6px var(--white-clr);
 }
 
 .logo {
@@ -38,7 +42,7 @@ nav {
     font-weight: 800;
     font-style: italic;
     text-transform: uppercase;
-    -webkit-text-stroke: 2px #fff;
+    -webkit-text-stroke: 2px var(--white-clr);
     letter-spacing: 5px;
 }
 
@@ -59,7 +63,7 @@ nav .menu li {
 
 
 nav .menu li a {
-    color: #ffffff;
+    color: var(--white-clr);
     text-decoration: none;
     text-transform: uppercase;
     font-size: 16px;
@@ -86,15 +90,15 @@ nav .menu li a img {
 .audio_container {
     height: 90%;
     padding: 30px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    position: relative;
 }
 
 .audio_container .part-1 {
-    height: 15%;
+    height: 12%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-bottom: 10px;
 }
 
 .search {
@@ -114,7 +118,7 @@ nav .menu li a img {
 .search label input {
     width: 100%;
     height: 100%;
-    background: #ffffff;
+    background: var(--white-clr);
     outline: none;
     border: none;
     padding: 0 20px;
@@ -137,8 +141,8 @@ nav .menu li a img {
     width: 70px;
     height: 100%;
     border: none;
-    background: #ffffff;
-    color: #000000;
+    background: var(--white-clr);
+    color: var(--black-clr);
     border-radius: 5px;
     font-size: 16px;
 }
@@ -148,28 +152,32 @@ nav .menu li a img {
     height: 50px;
     border-radius: 5px;
     border: none;
-    background: #ffffff;
-    color: #000000;
+    background: var(--white-clr);
+    color: var(--black-clr);
     font-size: 16px;
 }
 
 .current-playsong {
-    color: #ffffff;
+    color: var(--white-clr);
     font-size: 14px;
     font-weight: 600;
 }
 
 .audio_container .part-2 {
     width: 100%;
-    height: 85%;
+    height: 88%;
     overflow: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
+    transition: all .3s;
 }
-
+.part-active{
+    width: 74% !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+}
 .audio_container .part-2::-webkit-scrollbar {
     display: none;
 }
@@ -179,26 +187,26 @@ nav .menu li a img {
     flex-direction: column;
     justify-content: center;
     padding: 20px;
-    background-color: #b3b3b3;
-    border: 3px solid #b3b3b3;
+    background-color: var(--gray-clr);
+    border: 3px solid var(--gray-clr);
     border-radius: 5px;
     height: 200px;
     transition: all .2s;
 }
 .audio_container .part-2 .card:hover{
-    background-color: #000000;
-    box-shadow: 0 0 6px #fff;
+    background-color: var(--black-clr);
+    box-shadow: 0 0 6px var(--white-clr);
 }
 .audio_container .part-2 .card p {
     text-align: center;
-    color: #000000;
+    color: var(--black-clr);
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 10px;
     transition: all .2s;
 }
 .audio_container .part-2 .card:hover p{
-    color: #ffffff;
+    color: var(--white-clr);
 }
 
 .audio_container .part-2 .card audio {
@@ -207,7 +215,19 @@ nav .menu li a img {
 }
 
 .audio_container .part-2 .card audio::-webkit-media-controls-panel {
-    background: #ffffff;
+    background: var(--white-clr);
+}
+
+.card-active{
+    background-color: var(--black-clr) !important;
+    box-shadow: 0 0 6px var(--white-clr);
+    position: absolute;
+    top: 16%;
+    right: 30px;
+    width: 23%;
+}
+.card-active p{
+    color: var(--white-clr) !important;
 }
 
 
@@ -239,7 +259,7 @@ nav .menu li a img {
     text-align: center;
     font-size: 16px;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--white-clr);
     line-height: 22px;
     margin-top: 1rem;
 }
@@ -278,15 +298,16 @@ nav .menu li a img {
 #contact .card p {
     font-size: 16px;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--white-clr);
 }
 
 
 
 /* ================================= media css starts here ================================= */
 @media only screen and (min-width:1600px) {
-    #container {
+    .audio_container {
         width: 1600px;
+        margin: auto;
     }
 }
 

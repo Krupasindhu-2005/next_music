@@ -42,7 +42,7 @@ function searchSongs() {
         const card = songCards[i];
 
         if (songName.includes(searchQuery)) {
-            card.style.display = "block";
+            card.style.display = "flex";
         } else {
             card.style.display = "none";
         }
@@ -56,14 +56,55 @@ function goBack() {
 
     for (let i = 0; i < songCards.length; i++) {
         const card = songCards[i];
-        card.style.display = "block";
+        card.style.display = "flex";
     }
 }
 
 
 
-//============================ play song show in top js============================ //
-function updateCurrentSong(songTitle, artist, album) {
-    const currentSongDiv = document.getElementById('currentSong');
-    currentSongDiv.innerHTML = `<p>Now Playing: ${songTitle} by ${artist} (${album || 'Unknown Album'})</p>`;
+// ====================== active song js here ====================== //
+const songCards = document.querySelectorAll('.card');
+songCards.forEach(card => {
+    const audio = card.querySelector('audio');
+    audio.addEventListener('play', () => {
+        songCards.forEach(card => card.classList.remove('card-active'));
+        card.classList.add('card-active');
+        const songName = card.querySelector('p').textContent;
+        updateCurrentSong(songName);
+    });
+    audio.addEventListener('ended', () => {
+        card.classList.remove('card-active');
+    });
+});
+
+function updateCurrentSong(songName) {
+    const currentSongElement = document.getElementById('currentSong');
+    currentSongElement.textContent = songName;
 }
+
+function resetCard() {
+    const musicCard = document.getElementById('music-card');
+    if (musicCard) {
+        musicCard.classList.remove('card-active');
+    }
+}
+
+
+// =================== part-2 width handling =================== //
+
+const partCard = document.querySelectorAll('.card');
+const part2 = document.querySelector('.part-2');
+
+partCard.forEach(card => {
+    const audio = card.querySelector('audio');
+
+    audio.addEventListener('play', () => {
+        part2.classList.add('part-active');
+    });
+
+    audio.addEventListener('ended', () => {
+        part2.classList.remove('part-active');
+    });
+});
+
+
