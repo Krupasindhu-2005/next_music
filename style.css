@@ -7,9 +7,10 @@
     font-family: 'rubik', sans-serif;
 }
 :root{
-    --gray-clr:#b3b3b3;
+    --gray-clr:#bcbcbc;
     --black-clr:#000000;
     --white-clr:#ffffff;
+    --shade-blue-clr:#9999ff;
 }
 body {
     height: 100vh;
@@ -38,12 +39,13 @@ nav {
 
 .logo {
     font-size: 30px;
-    color: rgb(88, 88, 88);
+    color: var(--shade-blue-clr);
     font-weight: 800;
     font-style: italic;
     text-transform: uppercase;
     -webkit-text-stroke: 2px var(--white-clr);
     letter-spacing: 5px;
+    cursor: pointer;
 }
 
 
@@ -54,7 +56,7 @@ nav {
 nav .menu {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 nav .menu li {
@@ -79,8 +81,11 @@ nav .menu li a img {
     width: 15px;
 }
 
-.active {
-    text-decoration: underline !important;
+.active  a{
+    color: var(--shade-blue-clr) !important;
+}
+.active a img{
+    filter: brightness(0) saturate(100%) invert(73%) sepia(26%) saturate(7360%) hue-rotate(205deg) brightness(104%) contrast(100%);
 }
 
 
@@ -96,9 +101,6 @@ nav .menu li a img {
 
 .audio_container .part-1 {
     height: 12%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
 
 .search {
@@ -107,47 +109,44 @@ nav .menu li a img {
     justify-content: space-between;
 }
 
-.search label {
-    width: 80%;
+.search {
+    width: 100%;
     height: 50px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1rem;
 }
 
-.search label input {
-    width: 100%;
+.search input {
+    width: 74%;
     height: 100%;
     background: var(--white-clr);
     outline: none;
     border: none;
     padding: 0 20px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     border-radius: 5px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    transition: all .2s;
 }
 
-.search label input::placeholder {
+.search input::placeholder {
     font-weight: 300;
     font-size: 12px;
 }
 
-.search label input:focus{
-    box-shadow: 0 0 10px #818181;
+.search input:focus{
+    box-shadow: 0 0 10px var(--shade-blue-clr);
 }
-.search label button {
-    width: 70px;
-    height: 100%;
-    border: none;
-    background: var(--white-clr);
-    color: var(--black-clr);
-    border-radius: 5px;
-    font-size: 16px;
+.serach-btns{
+    width: 24%;
+    display:flex ;
+    align-items: center;
+    justify-content: space-between;
 }
-
-.clear-btn {
+.serach-btns .serach-btn,
+.serach-btns .clear-btn {
     width: 70px;
     height: 50px;
     border-radius: 5px;
@@ -155,8 +154,14 @@ nav .menu li a img {
     background: var(--white-clr);
     color: var(--black-clr);
     font-size: 16px;
+    cursor: pointer;
+    transition: all .2s;
 }
-
+.serach-btns .serach-btn:hover,
+.serach-btns .clear-btn:hover{
+    box-shadow: 0 0 20px 2px var(--shade-blue-clr);
+    color: var(--shade-blue-clr);
+}
 .current-playsong {
     color: var(--white-clr);
     font-size: 14px;
@@ -191,11 +196,14 @@ nav .menu li a img {
     border: 3px solid var(--gray-clr);
     border-radius: 5px;
     height: 200px;
+    cursor: pointer;
+    user-select: none;
     transition: all .2s;
 }
 .audio_container .part-2 .card:hover{
     background-color: var(--black-clr);
-    box-shadow: 0 0 6px var(--white-clr);
+    box-shadow: 0 0 20px 2px var(--shade-blue-clr);
+    border-color: var(--shade-blue-clr);
 }
 .audio_container .part-2 .card p {
     text-align: center;
@@ -206,7 +214,7 @@ nav .menu li a img {
     transition: all .2s;
 }
 .audio_container .part-2 .card:hover p{
-    color: var(--white-clr);
+    color: var(--shade-blue-clr);
 }
 
 .audio_container .part-2 .card audio {
@@ -217,34 +225,46 @@ nav .menu li a img {
 .audio_container .part-2 .card audio::-webkit-media-controls-panel {
     background: var(--white-clr);
 }
+.audio_container .part-2 .card:hover audio::-webkit-media-controls-panel{
+    background-color: var(--shade-blue-clr);
+}
 
 .card-active{
     background-color: var(--black-clr) !important;
-    box-shadow: 0 0 6px var(--white-clr);
+    box-shadow: 0 0 20px 2px var(--shade-blue-clr);
+    border-color: var(--shade-blue-clr) !important;
     position: absolute;
     top: 16%;
     right: 30px;
     width: 23%;
 }
 .card-active p{
-    color: var(--white-clr) !important;
+    color: var(--shade-blue-clr) !important;
+}
+.card-active audio::-webkit-media-controls-panel{
+    background-color: var(--shade-blue-clr) !important;
 }
 
 
 /* =========================== about css starts here =========================== */
 #about {
-    display: grid;
-    place-items: center;
-    margin-top: 1rem;
-    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #about .img {
-    width: 140px;
-    height: 140px;
-    padding: 5px;
+    width: 270px;
+    height: 270px;
+    padding: 7px;
     background: linear-gradient(180deg, rgb(255, 74, 74), rgb(157, 82, 255), rgb(65, 65, 255));
     border-radius: 50%;
+    box-shadow: 0 0 40px 3px var(--shade-blue-clr);
 }
 
 #about .img img {
@@ -257,10 +277,10 @@ nav .menu li a img {
 
 #about p {
     text-align: center;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 500;
     color: var(--white-clr);
-    line-height: 22px;
+    line-height: 24px;
     margin-top: 1rem;
 }
 

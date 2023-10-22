@@ -42,133 +42,141 @@
 
                 <div class="search">
 
-                    <label for="">
 
-                        <input type="text" id="searchInput" placeholder="Search for a song..." autocomplete="off">
+                    <input type="text" id="searchInput" placeholder="Search for a song..." autocomplete="off">
 
-                        <button onclick="searchSongs()">
+                    <div class="serach-btns">
+                        <button onclick="searchSongs()" class="serach-btn">
                             <i class="fas fa-search"></i>
                         </button>
 
-                    </label>
 
-                    <button onclick="goBack()" class="clear-btn">
-                        <i class="fas fa-times"></i>
-                    </button>
+                        <button onclick="goBack()" class="clear-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
                 </div>
-                
+
             </div>
 
             <div class="part-2">
 
 
                 <!-- ========== song-1 ========== -->
-                <div class="card mT5">
+                <div class="card playButton">
                     <p>way down we go (instrumental) - kaleo [edit audio].mp3</p>
                     <audio controls onended="resetCard()">
                         <source src="music/1-way down we go (instrumental) - kaleo [edit audio].mp3" type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-2 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>BEAT DAS TREVAS (Slowed + Reverb).mp3</p>
-                    <audio controls onplay="updateCurrentSong('BEAT DAS TREVAS (Slowed + Reverb).mp3')" onended="resetCard()">
+                    <audio controls onended="resetCard()">
                         <source src="music/2-BEAT DAS TREVAS (Slowed + Reverb).mp3" type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-3 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>Freddie Dredd - Limbo.mp3</p>
                     <audio controls onended="resetCard()">
                         <source src="music/3-Freddie Dredd - Limbo.mp3" type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-4 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>Bloddy Mary X Dum Dum.mp3</p>
                     <audio controls onended="resetCard()">
                         <source src="music/4-Bloddy Mary X Dum Dum.mp3" type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-5 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>Future - Mask Off (Aesthetic Remix).mp3</p>
                     <audio controls onended="resetCard()">
                         <source src="music/5-Future - Mask Off (Aesthetic Remix).mp3" type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-6 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>Sex Whales & Fraxo - Dead To Me (feat. Lox Chatterbox).mp3</p>
                     <audio controls onended="resetCard()">
-                        <source src="music/6-Sex Whales & Fraxo - Dead To Me (feat. Lox Chatterbox).mp3" type="audio/mp3">
+                        <source src="music/6-Sex Whales & Fraxo - Dead To Me (feat. Lox Chatterbox).mp3"
+                            type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-7 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>Mockingbird - Eminem (Wrythow Remix)🎶.mp3</p>
                     <audio controls onended="resetCard()">
                         <source src="music/7-🎶Mockingbird - Eminem (Wrythow Remix)🎶.mp3" type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-8 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>Fenekot - Mockingbird (Eminem) Lyrics.mp3</p>
                     <audio controls onended="resetCard()">
                         <source src="music/8-Fenekot - Mockingbird (Eminem) Lyrics.mp3" type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-9 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>SCXR SOUL x Sx1nxwy _DEMONS IN MY SOUL_.mp3</p>
                     <audio controls onended="resetCard()">
                         <source src="music/9-SCXR SOUL x Sx1nxwy _DEMONS IN MY SOUL_.mp3" type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-10 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>Coolio - Gangsta</p>
                     <audio controls onended="resetCard()">
                         <source src="music/10-Coolio - Gangsta's Paradise (Lyrics) ft. L.V..mp3" type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-11 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>Gangstas Paradise-Lofi Fruits-Music</p>
                     <audio controls onended="resetCard()">
                         <source src="music/11-Gangsta's Paradise-Lofi Fruits-Music.mp3" type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-12 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>Ishq Wala Love</p>
                     <audio controls onended="resetCard()">
-                        <source src="music/12-Ishq Wala Love (Lyrics) - Student of the year _ Neeti Mohan, Salim Merchant, Shekhar Ravijiani.mp3" type="audio/mp3">
+                        <source
+                            src="music/12-Ishq Wala Love (Lyrics) - Student of the year _ Neeti Mohan, Salim Merchant, Shekhar Ravijiani.mp3"
+                            type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-13 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>Hippie Sabotage - Devil Eyes.mp3</p>
                     <audio controls onended="resetCard()">
                         <source src="music/13-Hippie Sabotage - Devil Eyes.mp3" type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-14 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>Jass Manak Girlfriend</p>
                     <audio controls onended="resetCard()">
-                        <source src="music/14-Girlfriend (Lyrics) - Jass Manak Snappy Romantic Song [TubeRipper.com].mp3" type="audio/mp3">
+                        <source
+                            src="music/14-Girlfriend (Lyrics) - Jass Manak Snappy Romantic Song [TubeRipper.com].mp3"
+                            type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-15 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>Jass Manak No Competition</p>
                     <audio controls onended="resetCard()">
-                        <source src="music/15-No Competition (lyrics) - Jass Manak FT. Divine No Competition Album [TubeRipper.com].mp3" type="audio/mp3">
+                        <source
+                            src="music/15-No Competition (lyrics) - Jass Manak FT. Divine No Competition Album [TubeRipper.com].mp3"
+                            type="audio/mp3">
                     </audio>
                 </div>
                 <!-- ========== song-16 ========== -->
-                <div class="card">
+                <div class="card playButton">
                     <p>Shubh - Cheques</p>
                     <audio controls onended="resetCard()">
                         <source src="music/16-Shubh - Cheques (Lyrics) [TubeRipper.com].mp3" type="audio/mp3">
@@ -183,10 +191,8 @@
 
     </div>
 
-
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
     <script src="script.js"></script>
+
 </body>
 
 </html>

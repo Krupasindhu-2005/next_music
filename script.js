@@ -108,3 +108,18 @@ partCard.forEach(card => {
 });
 
 
+
+
+// ========================= click on card play button js here ========================= //
+const cards = document.querySelectorAll(".playButton");
+
+cards.forEach(card => {
+    const audio = card.querySelector("audio");
+    card.addEventListener("click", function () {
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    });
+});
