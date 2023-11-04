@@ -39,7 +39,7 @@ nav {
 
 .logo {
     font-size: 30px;
-    color: var(--shade-blue-clr);
+    color: var(--gray-clr);
     font-weight: 800;
     font-style: italic;
     text-transform: uppercase;
