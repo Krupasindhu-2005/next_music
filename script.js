@@ -123,3 +123,14 @@ cards.forEach(card => {
         }
     });
 });
+
+
+// ================= card number js starts here ================= //
+
+document.addEventListener("DOMContentLoaded", function () {
+    var cardNumbers = document.querySelectorAll(".card-number");
+
+    cardNumbers.forEach(function (cardNumber, index) {
+        cardNumber.textContent = "SONG-" + (index + 1);
+    });
+});

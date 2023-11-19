@@ -6,12 +6,14 @@
     box-sizing: border-box;
     font-family: 'rubik', sans-serif;
 }
-:root{
-    --gray-clr:#bcbcbc;
-    --black-clr:#000000;
-    --white-clr:#ffffff;
-    --shade-blue-clr:#9999ff;
+
+:root {
+    --gray-clr: #bcbcbc;
+    --black-clr: #000000;
+    --white-clr: #ffffff;
+    --shade-blue-clr: #9999ff;
 }
+
 body {
     height: 100vh;
 }
@@ -48,11 +50,6 @@ nav {
     cursor: pointer;
 }
 
-
-#checkbox {
-    display: none;
-}
-
 nav .menu {
     display: flex;
     align-items: center;
@@ -81,13 +78,28 @@ nav .menu li a img {
     width: 15px;
 }
 
-.active  a{
+.active a {
     color: var(--shade-blue-clr) !important;
 }
-.active a img{
+
+.active a img {
     filter: brightness(0) saturate(100%) invert(73%) sepia(26%) saturate(7360%) hue-rotate(205deg) brightness(104%) contrast(100%);
 }
 
+#check {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.menu-icon span {
+    background-color: var(--white-clr);
+    padding: 2px 15px;
+}
 
 
 /* ============================================== home page css starts here ============================================== */
@@ -136,15 +148,17 @@ nav .menu li a img {
     font-size: 12px;
 }
 
-.search input:focus{
+.search input:focus {
     box-shadow: 0 0 10px var(--shade-blue-clr);
 }
-.serach-btns{
+
+.serach-btns {
     width: 24%;
-    display:flex ;
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .serach-btns .serach-btn,
 .serach-btns .clear-btn {
     width: 70px;
@@ -157,11 +171,13 @@ nav .menu li a img {
     cursor: pointer;
     transition: all .2s;
 }
+
 .serach-btns .serach-btn:hover,
-.serach-btns .clear-btn:hover{
+.serach-btns .clear-btn:hover {
     box-shadow: 0 0 20px 2px var(--shade-blue-clr);
     color: var(--shade-blue-clr);
 }
+
 .current-playsong {
     color: var(--white-clr);
     font-size: 14px;
@@ -179,13 +195,16 @@ nav .menu li a img {
     gap: 10px;
     transition: all .3s;
 }
-.part-active{
+
+.part-active {
     width: 74% !important;
     grid-template-columns: repeat(3, 1fr) !important;
 }
+
 .audio_container .part-2::-webkit-scrollbar {
     display: none;
 }
+
 .audio_container .part-2 .card {
     display: flex;
     align-items: center;
@@ -200,20 +219,24 @@ nav .menu li a img {
     user-select: none;
     transition: all .2s;
 }
-.audio_container .part-2 .card:hover{
+
+.audio_container .part-2 .card:hover {
     background-color: var(--black-clr);
     box-shadow: 0 0 20px 2px var(--shade-blue-clr);
     border-color: var(--shade-blue-clr);
 }
+
 .audio_container .part-2 .card p {
     text-align: center;
     color: var(--black-clr);
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 10px;
+    margin-top: 10px;
     transition: all .2s;
 }
-.audio_container .part-2 .card:hover p{
+
+.audio_container .part-2 .card:hover p {
     color: var(--shade-blue-clr);
 }
 
@@ -225,11 +248,12 @@ nav .menu li a img {
 .audio_container .part-2 .card audio::-webkit-media-controls-panel {
     background: var(--white-clr);
 }
-.audio_container .part-2 .card:hover audio::-webkit-media-controls-panel{
+
+.audio_container .part-2 .card:hover audio::-webkit-media-controls-panel {
     background-color: var(--shade-blue-clr);
 }
 
-.card-active{
+.card-active {
     background-color: var(--black-clr) !important;
     box-shadow: 0 0 20px 2px var(--shade-blue-clr);
     border-color: var(--shade-blue-clr) !important;
@@ -238,14 +262,30 @@ nav .menu li a img {
     right: 30px;
     width: 23%;
 }
-.card-active p{
+
+.card-active p {
     color: var(--shade-blue-clr) !important;
 }
-.card-active audio::-webkit-media-controls-panel{
+
+.card-active audio::-webkit-media-controls-panel {
     background-color: var(--shade-blue-clr) !important;
 }
 
+.card-number{
+    color: var(--black-clr);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    float: left;
+    transition: all .2s;
+}
 
+.audio_container .part-2 .card:hover .card-number {
+    color: var(--shade-blue-clr);
+}
+.card-active .card-number {
+    color: var(--shade-blue-clr) !important;
+}
 /* =========================== about css starts here =========================== */
 #about {
 
@@ -331,20 +371,89 @@ nav .menu li a img {
     }
 }
 
-@media only screen and (max-width:1000px) {
-    .audio_container .part-2 {
-        grid-template-columns: repeat(3, 1fr);
+@media only screen and (max-width:420px) {
+    .logo {
+        font-size: 20px;
+        color: var(--shade-blue-clr);
+        font-weight: 700;
+        -webkit-text-stroke: 1px var(--white-clr);
+        letter-spacing: 3px;
     }
-}
 
-@media only screen and (max-width:600px) {
-    .audio_container .part-2 {
-        grid-template-columns: repeat(2, 1fr);
+    nav {
+        padding: 0 10px;
     }
-}
 
-@media only screen and (max-width:400px) {
+    .menu {
+        position: fixed;
+        background-color: var(--black-clr);
+        width: 50%;
+        height: 0;
+        z-index: 99;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: 0 0 6px var(--shade-blue-clr);
+        border-radius: 5px;
+        top: 11%;
+        right: 10px;
+        overflow: hidden;
+        transition: height .3s;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    #check:checked~.menu {
+        height: 29%;
+    }
+
     .audio_container .part-2 {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .part-active {
+        grid-template-columns: repeat(1, 1fr) !important;
+        width: 100% !important;
+        height: 66% !important;
+    }
+
+    .audio_container {
+        height: 90%;
+        padding: unset;
+        padding-bottom: 10px;
+        width: 95%;
+        margin: auto;
+    }
+
+    .card-active {
+        top: unset;
+        right: unset;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 22% !important;
+        bottom: 5px;
+    }
+
+    .audio_container .part-2 .card p {
+        font-size: 14px;
+    }
+
+    .audio_container .part-2 .card {
+        height: 135px;
+    }
+
+    .audio_container .part-1 {
+        display: grid;
+        place-items: center;
+    }
+
+    .serach-btns {
+        gap: 10px;
+        width: 30%;
+    }
+
 }
